@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h1>Animation</h1>
+<h3>Bouncing Loader</h3>
+<style>
+@keyframes bouncing-loader {
+  to {
+    opacity: 0.1;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+.bouncing-loader {
+  display: flex;
+  justify-content: center;
+}
+.bouncing-loader > div {
+  width: 1rem;
+  height: 1rem;
+  margin: 3rem 0.2rem;
+  background: #8385aa;
+  border-radius: 50%;
+  animation: bouncing-loader 0.6s infinite alternate;
+}
+.bouncing-loader > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bouncing-loader > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+</style>
+<div class="bouncing-loader">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<h1>Text</h1>
+<h3>Etched Text</h3>
+<style>
+/* IE 10+ */
+.etched-text {
+/* shadow should be a little lighter than background */
+  text-shadow: 0 2px white;
+  font-size: 1.5rem;
+  font-weight: bold;
+/* color should be darker than background */
+  color: #b8bec5;
+}
+</style>
+<div style="background: #f5f6f9">
+    <p class="etched-text">I appear etched into the background.</p>
+</div>
+
+<h3>Customize Text Selection</h3>
+<style>
+/* IE 9+, not iOS */
+.custom-text-selection::selection {
+  background: deeppink;
+  color: white;
+}
+</style>
+<p class="custom-text-selection">Select some of this text.</p>
+
+<h3>OS Native Font</h3>
+<style>
+.system-font-stack {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+</style>
+<p class="system-font-stack">This text uses the system font.</p>
+
+<h3>Truncate Text</h3>
+<style>
+.truncate-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+</style>
+<p class="truncate-text">If I exceed one line's width, I will be truncated.</p>
+
+</body>
+</html>
